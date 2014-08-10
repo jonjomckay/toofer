@@ -18,9 +18,19 @@ Toofer is an AngularJS-based dashboard panel for CoreOS's [fleet](https://github
         COREOS_FLEET_HOST=172.17.8.101
 	    COREOS_FLEET_PORT=5001
 
-3. Run the node.js server that acts as both a proxy to the HTTP API, and a server for the dashboard
+3. Run `bower install` to install the dashboard dependencies
 
-4. Access the dashboard at [http://localhost:3000](http://localhost:3000)
+        $ bower install
+
+4. Run `npm install` to install the server dependencies
+
+        $ npm install
+
+5. Run the node.js server that acts as both a proxy to the HTTP API, and a server for the dashboard
+
+        $ node server.js
+
+6. Access the dashboard at [http://localhost:3000](http://localhost:3000)
 
 ## License
 
