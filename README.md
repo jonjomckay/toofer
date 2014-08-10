@@ -7,16 +7,16 @@ Toofer is an AngularJS-based dashboard panel for CoreOS's [fleet](https://github
 
 1. Clone the repo and enter the application directory
 
-    $ git clone https://github.com/jonjomckay/toofer.git
-    $ cd toofer
+        $ git clone https://github.com/jonjomckay/toofer.git
+        $ cd toofer
 
 2. Copy `.env.dist` to `.env` and fill in the placeholders with the relevant values
 
-    $ cp .env.dist .env
-    $ nano .env
+        $ cp .env.dist .env
+        $ nano .env
 
-    COREOS_FLEET_HOST=172.17.8.101
-	COREOS_FLEET_PORT=5001
+        COREOS_FLEET_HOST=172.17.8.101
+	    COREOS_FLEET_PORT=5001
 
 3. Run the node.js server that acts as both a proxy to the HTTP API, and a server for the dashboard
 
@@ -26,4 +26,4 @@ Toofer is an AngularJS-based dashboard panel for CoreOS's [fleet](https://github
 
 toofer is released under the MIT License. See the LICENSE file for details.
 
-The included dashboard template and associated components are based on @Ehesp's [AngularJS Responsive Dashboard](https://github.com/Ehesp/Responsive-Dashboard) project, which is also released under the MIT License.
+The included dashboard template and associated components are based on [@Ehesp's AngularJS Responsive Dashboard](https://github.com/Ehesp/Responsive-Dashboard) project, which is also released under the MIT License.
