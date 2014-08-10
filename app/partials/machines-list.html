@@ -1,0 +1,37 @@
+<div ng-controller="MachinesController" ng-init="fetchMachines()">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="widget">
+        <div class="widget-body">
+          <div class="widget-icon green pull-left">
+            <i class="fa fa-tasks"></i>
+          </div>
+          <div class="widget-content pull-left">
+            <div class="title">Machines</div>
+            <div class="comment">All the hosts in the cluster</div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12" id="machines">
+      <div class="widget">
+        <div class="widget-body medium no-padding">
+          <div class="table-responsive">
+            <table class="table">
+              <tbody>
+                <tr class="machine" ng-repeat="machine in machines">
+                  <td>{{ machine.id }}</td>
+                  <td>{{ machine.primaryIP }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

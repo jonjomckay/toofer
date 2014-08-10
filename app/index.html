@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CoreOS Panel</title>
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="bower_components/highlightjs/styles/monokai.css" />
+  <link rel="stylesheet" href="css/dashboard/dashboard.css">
+  <link rel="stylesheet" href="css/themes/blue.css">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+  <script src="bower_components/angular-highlightjs/angular-highlightjs.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/angular-utf8-base64/angular-utf8-base64.min.js"></script>
+  <script src="bower_components/highlightjs/highlight.pack.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body ng-app="coreos" ng-controller="MasterCtrl">
+  <div id="page-wrapper" ng-class="{'active': toggle}" ng-cloak>
+    <div id="sidebar-wrapper">
+      <ul class="sidebar">
+        <li class="sidebar-main">
+          <a href="#" ng-click="toggleSidebar()">
+            Dashboard
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li class="sidebar-list" ng-class="{ active: isActive('/dashboard') }">
+          <a href="#/dashboard">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
+        </li>
+        <li class="sidebar-list" ng-class="{ active: isActive('/machines') }">
+          <a href="#/machines">Machines <span class="menu-icon fa fa-tasks"></span></a>
+        </li>
+        <li class="sidebar-list" ng-class="{ active: isActive('/units') }">
+          <a href="#/units">Units <span class="menu-icon fa fa-cogs"></span></a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="content-wrapper">
+      <div class="page-content">
+        <div class="row header">
+          <div class="col-xs-12">
+            <div class="meta pull-left">
+              <div class="page">
+                Dashboard
+              </div>
+              <div class="breadcrumb-links">
+                Home / Dashboard
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <alert ng-repeat="alert in alerts" type="{{ alert.type }}" close="alert.close()">{{ alert.msg }}</alert>
+          </div>
+        </div>
+
+        <div class="row">
+          <div ng-view></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.btn-superdanger {
+  color: #fff;
+  background-color: #444;
+  border-color: #333;
+}
+.btn-superdanger:hover, .btn-superdanger:focus, .btn-superdanger:active, .btn-superdanger.active, .open > .dropdown-toggle.btn-superdanger {
+  color: #fff;
+  background-color: #333;
+  border-color: #000;
+}
+.btn-superdanger:active, .btn-superdanger.active, .open > .dropdown-toggle.btn-superdanger {
+  background-image: none;
+}

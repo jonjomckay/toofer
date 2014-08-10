@@ -1,0 +1,15 @@
+{
+	"name": "coreos-panel",
+	"version": "0.0.1",
+	"dependencies": {
+		"angular": "1.2.x",
+		"angular-bootstrap": "0.x",
+		"angular-cookies": "~1.2.x",
+		"angular-highlightjs": "0.x",
+		"angular-route": "~1.2.x",
+		"angular-utf8-base64": "0.x",
+		"bootstrap": "3.x",
+		"components-font-awesome": "4.x",
+		"highlightjs": "8.x"
+	}
+}

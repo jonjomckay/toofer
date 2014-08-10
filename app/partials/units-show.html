@@ -1,0 +1,61 @@
+<div ng-controller="UnitsController" ng-init="fetchUnit()">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="widget">
+        <div class="widget-title">
+          <i class="fa fa-cogs"></i> Unit
+          <div class="pull-right">
+            <button class="btn btn-sm btn-success" ng-click="changeUnitState(unit, 'launched')">Start</button>
+            <button class="btn btn-sm btn-warning" ng-click="changeUnitState(unit, 'loaded')">Stop</button>
+            <button class="btn btn-sm btn-info" ng-click="restartUnit(unit)">Restart</button>
+            <button class="btn btn-sm btn-danger" ng-click="changeUnitState(unit, 'inactive')">Disable</button>
+            <button class="btn btn-sm btn-superdanger" ng-click="destroyUnit(unit)">Destroy</button>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="widget-body">
+          <div class="widget-icon green pull-left">
+            <i class="fa fa-cogs"></i>
+          </div>
+          <div class="widget-content pull-left">
+            <div class="title">{{ unit.name }}</div>
+            <div class="comment">
+              <span ng-switch on="unit.currentState">
+                <span ng-switch-when="inactive" class="text-danger state">Disabled</span>
+                <span ng-switch-when="loaded" class="text-warning state">Stopped</span>
+                <span ng-switch-when="launched" class="text-success state">Running</span>
+              </span>
+              <span ng-if="unit.systemd">
+                <span class="divider">/</span>
+                <span ng-switch on="unit.systemd.activeState">
+                  <span ng-switch-when="active" class="text-success">Running</span>
+                  <span ng-switch-when="reloading" class="text-info">Reloading</span>
+                  <span ng-switch-when="inactive" class="text-success">Inactive</span>
+                  <span ng-switch-when="failed" class="text-danger">Failed</span>
+                  <span ng-switch-when="activating" class="text-info">Activating</span>
+                  <span ng-switch-when="deactivating" class="text-info">Deactivating</span>
+                </span>
+              </span>
+
+              <span ng-if="unit.targetMachineID"> on <strong><span class="target-machine">{{ unit.targetMachineID }}</span></strong></span>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12" id="units">
+      <div class="widget">
+        <div class="widget-title">
+          <i class="fa fa-file-text-o"></i> Content
+        </div>
+        <div class="widget-body no-padding">
+          <div hljs source="unit.fileContents|decode"></div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
