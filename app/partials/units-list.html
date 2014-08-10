@@ -27,25 +27,25 @@
                   <td><a href="#/units/{{ unit.name }}">{{ unit.name }}</a></td>
                   <td>
                     <span ng-switch on="unit.currentState">
-		                  <span ng-switch-when="inactive" class="text-danger state">Disabled</span>
-		                  <span ng-switch-when="loaded" class="text-warning state">Stopped</span>
-		                  <span ng-switch-when="launched" class="text-success state">Running</span>
-		                </span>
-		                <span ng-if="unit.systemd">
-		                  <span class="divider">/</span>
-		                  <span ng-switch on="unit.systemd.activeState">
-		                    <span ng-switch-when="active" class="text-success">Running</span>
-		                    <span ng-switch-when="reloading" class="text-info">Reloading</span>
-		                    <span ng-switch-when="inactive" class="text-success">Inactive</span>
-		                    <span ng-switch-when="failed" class="text-danger">Failed</span>
-		                    <span ng-switch-when="activating" class="text-info">Activating</span>
-		                    <span ng-switch-when="deactivating" class="text-info">Deactivating</span>
-		                  </span>
-		                </span>
+                      <span ng-switch-when="inactive" class="text-danger state">Disabled</span>
+                      <span ng-switch-when="loaded" class="text-warning state">Stopped</span>
+                      <span ng-switch-when="launched" class="text-success state">Running</span>
+                    </span>
+                    <span ng-if="unit.systemd">
+                      <span class="divider">/</span>
+                      <span ng-switch on="unit.systemd.activeState">
+                        <span ng-switch-when="active" class="text-success">Running</span>
+                        <span ng-switch-when="reloading" class="text-info">Reloading</span>
+                        <span ng-switch-when="inactive" class="text-success">Inactive</span>
+                        <span ng-switch-when="failed" class="text-danger">Failed</span>
+                        <span ng-switch-when="activating" class="text-info">Activating</span>
+                        <span ng-switch-when="deactivating" class="text-info">Deactivating</span>
+                      </span>
+                    </span>
                   </td>
                   <td>
-                  	<span ng-if="unit.targetMachineID">{{ unit.targetMachineID }}</span>
-                  	<span ng-if="!unit.targetMachineID">n/a</span>
+                    <span ng-if="unit.targetMachineID">{{ unit.targetMachineID }}</span>
+                    <span ng-if="!unit.targetMachineID">n/a</span>
                   </td>
                 </tr>
               </tbody>
