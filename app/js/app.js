@@ -1,4 +1,4 @@
-var app = angular.module('coreos', ['ab-base64', 'hljs', 'ngCookies', 'ngRoute', 'ui.bootstrap']);
+var app = angular.module('toofer', ['ab-base64', 'hljs', 'ngCookies', 'ngRoute', 'ui.bootstrap']);
 
 app.filter('decode', function(base64) {
 	return function(input) {
@@ -70,7 +70,7 @@ app.controller('MachinesController', function MachinesController($scope, CoreOSS
 	}
 });
 
-app.controller('MasterCtrl', function($scope, $cookieStore) {
+app.controller('MasterController', function($scope, $cookieStore) {
 
     var mobileView = 992;
 
